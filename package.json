@@ -1,0 +1,27 @@
+{
+  "name": "bitmedialabs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --stream --parallel -r --if-present run dev",
+    "build:client": "pnpm --filter ./apps/client run build && cp -r ./apps/client/dist ./apps/server/public",
+    "start:server": "pnpm --filter ./apps/server run start",
+    "start": "pnpm run build:client && pnpm run start:server",
+    "start:prod": "pnpm --filter ./apps/server run start:prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.17.0"
+  },
+  "imports": {
+    "#root/*.js": "./src/*.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+}

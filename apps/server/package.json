@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --watch-path=./src --watch-path=.env --watch main.js",
+    "start": "node --env-file=.env main.js",
+    "start:prod": "NODE_ENV=production node main.js"
+  },
+  "imports": {
+    "#root/*.js": "./src/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.6.2",
+    "socket.io": "^4.7.5"
+  }
+}

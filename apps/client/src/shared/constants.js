@@ -1,0 +1,2 @@
+// QUERY KEYS
+export const LOOT_BOXES = 'LOOT_BOXES';
