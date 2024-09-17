@@ -22,13 +22,15 @@ const connectSocket = (io) => {
         socket.decoded = decoded;
         next();
     }).on('connection', (socket) => {
-        const { sessionId } = socket.decoded;
-        createOnlineSession(sessionId);
-        socket.join(sessionId);
-        socket.on('disconnect', () => {
-            deleteOnlineSession(sessionId);
-            socket.leave();
-        });
+        const { sessionId } = socket.decoded ?? { };
+        if (sessionId) {
+            createOnlineSession(sessionId);
+            socket.join(sessionId);
+            socket.on('disconnect', () => {
+                deleteOnlineSession(sessionId);
+                socket.leave();
+            });
+        }
     });
 };
 
