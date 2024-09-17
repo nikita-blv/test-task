@@ -20,6 +20,11 @@ How to run it.
    * `pnpm dev` and go to the `http://localhost:5173` to the frontend
    * more "production like" run `pnpm start` and go to the `http://localhost:5173` to the frontend
 
+Project structure
+* [packages/api-sdk](packages/api-sdk) - simple util that provides us read api calls functions, used by frontend
+* [apps/client](apps/client) - React app, frontend part
+* [apps/server](apps/server) - Express app, backend part
+
 The things i planned to do, but didn't have a time(for some of them i did some parts, but they were left not finished)
 * Redis (for caching and storing sessions, currently they are stored in RAM)
 * Refresh tokens mechanism (for caching and storing sessions)
